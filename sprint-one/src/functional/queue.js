@@ -29,9 +29,9 @@ var Queue = function() {
       return count - lowestCount
   };
 
-  someInstance.revealInternals = function(){
-      console.log(storage, count)
-  } 
+  // someInstance.revealInternals = function(){
+  //     console.log(storage, count)
+  // } 
 
   return someInstance;
 };
