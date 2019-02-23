@@ -5,7 +5,7 @@ var LinkedList = function() {
 
   list.addToTail = function(value) {
      
-    var node = Node(value) // 
+    var node = Node(value)
      
     if(list.head !== null){
      list.tail.next = node;
@@ -25,7 +25,20 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
-  };
+    var find = function (node){
+    
+    if (node.value === target){
+      return true
+    } else if (node.next === null){
+      return false
+    } else {
+      node = node.next;
+      return find(node)
+      }
+    } 
+    
+    return find(list.head)
+   };
 
   return list;
 };
@@ -38,15 +51,3 @@ var Node = function(value) {
 
   return node;
 };
-
-var instanceOfList = LinkedList();
-instanceOfList.addToTail(5)
-instanceOfList.addToTail(6)
-instanceOfList.addToTail(7)
-instanceOfList.addToTail(8)
-console.log(instanceOfList)
-
-
-/*
- * Complexity: What is the time complexity of the above functions?
- */
