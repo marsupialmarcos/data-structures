@@ -4,19 +4,22 @@ This is a project I completed as a student at [hackreactor](http://hackreactor.c
 # SPRINT ONE: OBJECT-ORIENTED PROGRAMMING
 
 Queue: FIFO - Ex: Queue to the loo. Great for.. sequential operations.
+
 Stack: LIFO - Ex: Stack of pancakes. Great for… implementing your browser’s back button.
 
 # Bare Minimum Requirements
 
 Implement a stack with the following methods:
-push(string) - Add a string to the top of the stack
-pop() - Remove and return the string on the top of the stack
-size() - Return the number of items on the stack
+
+* push(string) - Add a string to the top of the stack
+* pop() - Remove and return the string on the top of the stack
+* size() - Return the number of items on the stack
 
 Implement a queue with the following methods:
-enqueue(string) - Add a string to the back of the queue
-dequeue() - Remove and return the string at the front of the queue
-size() - Return the number of items in the queue
+
+* enqueue(string) - Add a string to the back of the queue
+* dequeue() - Remove and return the string at the front of the queue
+* size() - Return the number of items in the queue
 
 Implement both stack and queue data structures in each of the instantiation styles. The functional style is stubbed out in src/functional/queue.js and src/functional/stack.js to get you started.
 
@@ -93,22 +96,24 @@ Example: es6 instantiation example
 A linked list is a dynamic data structure that allows for constant time insertion and removal at any point in the linked list (compare this to an array which on average has linear time insertion and removal operations). In exchange for this insertion and removal speed, linked lists are not indexed and any find operations on a link list require the linear time operation of traversing the entire linked-list from the beginning.
 
 A linkedList class, in functional style, with the following properties:
-.head property, a linkedListNode instance
-.tail property, a linkedListNode instance
-.addToTail() method, takes a value and adds it to the end of the list
-.removeHead() method, removes the first node from the list and returns its value
-.contains() method, returns boolean reflecting whether or not the passed-in value is in the linked list
+
+* .head property, a linkedListNode instance
+* .tail property, a linkedListNode instance
+* .addToTail() method, takes a value and adds it to the end of the list
+* .removeHead() method, removes the first node from the list and returns its value
+* .contains() method, returns boolean reflecting whether or not the passed-in value is in the linked list
+
 What is the time complexity of the above functions?
 
 ## Tree
 
 A tree is a hierarchical data structure consisting of a node (potentially) with children. The children are trees unto themselves, that is, nodes with (potential) children. For this reason the tree is referred to as a recursive data structure.
 
-A tree class, in functional with shared methods style, with the following properties:
-.children property, an array containing a number of subtrees
-.addChild() method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
-A .contains() method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
-What is the time complexity of the above functions?
+* A tree class, in functional with shared methods style, with the following properties:
+* .children property, an array containing a number of subtrees
+* .addChild() method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
+* A .contains() method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
+* What is the time complexity of the above functions?
 
 ## Graph
 
@@ -120,12 +125,15 @@ Sets contain unique values in no particular order. A set would be great for.... 
 
 A set class, in prototypal style, with the following properties:
 
-An .add() method, takes any string and adds it to the set
-A .contains() method, takes any string and returns a boolean reflecting whether it can be found in the set
-A .remove() method, takes any string and removes it from the set, if present
+* An .add() method, takes any string and adds it to the set
+* A .contains() method, takes any string and returns a boolean reflecting whether it can be found in the set
+* A .remove() method, takes any string and removes it from the set, if present
 What is the time complexity of the above functions?
+
 Note: Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
+
 Note: Until the advanced section, your sets should handle only string values.
+
 Note: This is a rather simple data structure. Take a look at the Wikipedia entry. Which native Javascript type fits the requirements best?
 
 ## Hash Table
@@ -133,14 +141,20 @@ Note: This is a rather simple data structure. Take a look at the Wikipedia entry
 Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into numerical indices located within a fixed block of memory (think about the contiguous blocks of memory used in arrays). Hash tables only increase their size in memory when necessary, and reduce their size in memory when possible. A hash table would be great for.... A contact list you might add to or remove from over time.
 
 A hashTable class, in pseudoclassical style:
+
 First: Play with each of the helper functions provided to get a sense of what they do.
 You will use the provided hash function to convert any key into an array index. Try interacting with it from the console first.
+
 A limitedArray helper has been provided for you, check out the source code for it in src/hashTableHelpers.js. Use it to store all inserted values rather than using a plain JavaScript array. The limitedArray, as you will see in the source code, provides get, set, and each methods which you should use in order to interact with it. Do not use the typical bracket notation for arrays when interacting with a limitedArray instance. Try interacting with it from the console first.
+
 Make the following properties appear on all instances:
-An .insert() method
-A .retrieve() method
-A .remove() method
+
+* An .insert() method
+* A .retrieve() method
+* A .remove() method
+
 What is the time complexity of the above functions?
+
 Using your understanding of hash tables, refactor your set implementation from above to run in constant time
 
 On Objects and Hash Tables: An astute hacker might find themselves wondering "Is it not so that a JavaScript object is a hash table?" or even further, "Why would I ever need to create a hash table in JavaScript?" While it is true that objects and hash tables are functionally similar, knowing how a hash table works is hugely important as they are an incredibly useful and fundamental data structure. To have detailed knowledge of how a hash table is constructed will give you valuable insight on your path to code mastery. Additionally, other languages might not provide the convenience of JavaScript's object class, meaning you may someday have to put your hash table construction abilities to good use.
