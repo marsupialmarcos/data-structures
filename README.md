@@ -25,7 +25,7 @@ Implement both stack and queue data structures in each of the instantiation styl
 
 # Instantiation Styles
 
-1. **Functional instantiation:** a simple "maker" pattern.
+## 1. **Functional instantiation:** a simple "maker" pattern.
 
 *Do:*
 * Work within the src/functional/ folder
@@ -36,7 +36,7 @@ Implement both stack and queue data structures in each of the instantiation styl
 
 Example: The provided classes *Stack* and *Queue* already follow this pattern
 
-2. **Functional instantiation with shared methods:** same as Step 1, but with shared methods
+## 2. **Functional instantiation with shared methods:** same as Step 1, but with shared methods
 
 *Do:*
 * Work within the src/functional-shared/ folder
@@ -49,7 +49,7 @@ Example: The provided classes *Stack* and *Queue* already follow this pattern
 
 Example: functional instantiation example
 
-3. **Prototypal instantiation:** using *Object.create*
+## 3. **Prototypal instantiation:** using *Object.create*
 
 *Do:*
 * Work within the src/prototypal/ folder
@@ -59,7 +59,7 @@ Example: functional instantiation example
 
 Example: prototypal instantiation example
 
-4. **Pseudoclassical instantiation:** create instances with the keyword *new*
+## 4. **Pseudoclassical instantiation:** create instances with the keyword *new*
 
 *Do:*
 * Work within the src/pseudoclassical/ folder
@@ -72,7 +72,7 @@ Example: prototypal instantiation example
 
 Example: pseudoclassical instantiation example
 
-5. **ES6 instantiation:** create instances with the keyword new
+## 5. **ES6 instantiation:** create instances with the keyword new
 
 *Do:* 
 * Work within the src/es6/ folder
@@ -88,6 +88,7 @@ Example: pseudoclassical instantiation example
 
 Example: es6 instantiation example
 
+___
 
 # SPRINT TWO: DATA STRUCTURES
 
@@ -167,22 +168,24 @@ On Objects and Hash Tables: An astute hacker might find themselves wondering "Is
 Binary trees are trees that can only have 0, 1, or 2 children. Remember that trees are recursive data structures and therefore a tree's children are themselves trees and can each have 0, 1, or 2 children. In a binary search tree, one child (out of potentially two) will always be less than the node's value (based on whatever sorting condition you wish) and the other child will always be greater than the node's value. Whether it is the 'left' or the 'right' child which is greater or lesser is consistent throughout the binary search tree. This structure results in particularly fast find operations. You'll be asked to answer just how fast yourself. A binary search tree would be great for.... A dictionary of all English words.
 
 Implement a binarySearchTree class with the following properties:
-A .left property, a binary search tree (BST) where all values are lower than the current value.
-A .right property, a BST where all values are higher than the current value.
-A .insert() method, which accepts a value and places it in the tree in the correct position.
-A .contains() method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
-A .depthFirstLog() method, which accepts a callback and executes it on every value contained in the tree.
+* A .left property, a binary search tree (BST) where all values are lower than the current value.
+* A .right property, a BST where all values are higher than the current value.
+* A .insert() method, which accepts a value and places it in the tree in the correct * position.
+* A .contains() method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
+* A .depthFirstLog() method, which accepts a callback and executes it on every value contained in the tree.
 What is the time complexity of the above functions?
+
 Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
+
 Tests
 
 For each of the data structures you have implemented, go back and add at least one additional unit test. If possible, try to add a test that will require you improve your implementation in order to make the test pass.
 
-APIs and Implementation: A Note on Communicating Your Intentions as a Developer
+**APIs and Implementation: A Note on Communicating Your Intentions as a Developer**
 
-tl;dr: prefix private properties and methods with an underscore
+**tl;dr:** *prefix private properties and methods with an underscore*
 
-APIs are more than just URLs that return data; API is a general term that refers to the visible surface of any system, object, or library with which your code interacts. E.g., an airplane has an API that consists of knobs, dials, pedals, and a yoke which allow the pilot to make use of the airplane's underlying implementation--an engine, wings, and rudders. Importantly, the next model of airplane will probably have improvements to the engine, but the pilot need not know about this, as the controls will remain basically unchanged.
+APIs are more than just URLs that return data; **API** is a general term that refers to the visible surface of any system, object, or library with which your code interacts. E.g., an airplane has an API that consists of knobs, dials, pedals, and a yoke which allow the pilot to make use of the airplane's underlying **implementation**--an engine, wings, and rudders. Importantly, the next model of airplane will probably have improvements to the engine, but the pilot need not know about this, as the controls will remain basically unchanged.
 
 This relationship between APIs and implementations--that they remain independent--is what keeps the towering stacks of software we use everyday from falling over.
 
@@ -190,37 +193,36 @@ In JavaScript, because there is no concept of private variables (except through 
 
 To prevent this from happening to your collaborators and consumers, indicate private properties and methods by prefixing them with an underscore. This is how we do.
 
-
 # ADVANCED CONTENT
 Our advanced content is intended to throw you in over your head, requiring you to solve problems with very little support or oversight, much like you would as a mid or senior level engineer.
 
-Use the Chrome profiling tools to compare the performance of each instantiation pattern.
+**Use the Chrome profiling tools to compare the performance of each instantiation pattern.**
 
-Create a new HTML page with your data structures and an additional profiling script. It should instantiate and use a large number of stacks and queues
-Reload the page with the CPU profiler running to investigate the runtime of your functions
-Take a heap snapshot to investigate object allocations and memory use
-Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
-Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis you could share with a supervisor who needs the information you have in order to make wise decisions about the design of an upcoming project.
+* Create a new HTML page with your data structures and an additional profiling script. It should instantiate and use a large number of stacks and queues
+* Reload the page with the CPU profiler running to investigate the runtime of your functions
+* Take a heap snapshot to investigate object allocations and memory use
+* Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
+* Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis you could share with a supervisor who needs the information you have in order to make wise decisions about the design of an upcoming project.
 
-Note: The following prompts have varying levels of difficulty and you may not wish to complete all of them in entirety. In order to decide how to allocate your time, please read the descriptions of all of them before starting.
+**Note:** *The following prompts have varying levels of difficulty and you may not wish to complete all of them in entirety. In order to decide how to allocate your time, please read the descriptions of all of them before starting.*
 
 **Optional, but highly recommended:** Use TDD.
 
 * Create a doubly-linked-list, with all the methods of your linked list, and add the following properties:
-  * An .addToHead() method which takes a value and adds it to the front of the list.
-  * A .removeTail() method which removes the last node from the list and returns its value.
-Note: each node object will need to have a new .previous property pointing to the node behind it (or to null when appropriate); this is what makes it a doubly-linked list.
+  * An *.addToHead()* method which takes a value and adds it to the front of the list.
+  * A *.removeTail()* method which removes the last node from the list and returns its value.
+Note: each *node* object will need to have a new .previous property pointing to the node behind it (or to *null* when appropriate); this is what makes it a doubly-linked list.
 * Add parent links to your tree
-  * A .parent property, which refers to the parent node or null when there is no node
-  * A .removeFromParent() method, which disassociates the tree with its parent (in both directions)
-  * To prevent excessive collisions, make your hashTable double in size as soon as 75 percent of the spaces have been filled
-* To save space, make sure the hashTable halves in size when space usage falls below 25 percent
-* Implement a .traverse() method on your tree. Your .traverse() should accept a callback and execute it on every value contained in the tree
-.breadthFirstLog() method for binarySearchTee, logs the nodes contained in the tree using a breadth-first approach
+  * A *.parent* property, which refers to the parent node or null when there is no node
+  * A *.removeFromParent()* method, which disassociates the tree with its parent (in both directions)
+  * To prevent excessive collisions, make your *hashTable* double in size as soon as 75 percent of the spaces have been filled
+* To save space, make sure the *hashTable* halves in size when space usage falls below 25 percent
+* Implement a *.traverse()* method on your tree. Your .traverse() should accept a callback and execute it on every value contained in the tree
+* *.breadthFirstLog()* method for *binarySearchTee*, logs the nodes contained in the tree using a breadth-first approach
 * Make your set capable of handling numbers as well as strings
 * Make your set capable of handling input objects of any type
 * Make your binarySearchTree rebalance as soon as the max depth is more than twice the minimum depth
-Implement a bloomFilter:
+Implement a *bloomFilter:*
 * Read the Wikipedia article about Bloom Filters and/or BillMill.org's Bloom Filters by Example. tl;dr: It's a probabilistic data structure that efficiently determines whether or not an element is contained in a set. The downside is that is can report false positives. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
 * Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
 * Run a small loop that runs 10,000 trials of trying to retrieve a mix of items that are in the filter and not in the filter.
@@ -230,7 +232,7 @@ Implement a bloomFilter:
 
 # NIGHTMARE MODE:
 
-Note: Please feel free to attempt the following in any order you would like.
+**Note:** Please feel free to attempt the following in any order you would like.
 
 * Write a prefixTree that can handle autocomplete for T9-style texting
 * Write a bTree
@@ -286,5 +288,5 @@ console.log(line);
 # RESOURCES
 
 * Data structure coverage in Wikipedia is no joke. Consider heading to Wikipedia when you have questions about data structures you are working with, or want to start learning about new ones.
-* VisuAlgo is an incredible sight with clean visualizations of all kinds of data structures and algorithms.
+* [VisuAlgo](visualgo.com) is an incredible sight with clean visualizations of all kinds of data structures and algorithms.
 * Hack Reactor graduate Ryan Atkinson's excellent blog post JavaScript Classes and Instantiation Patterns
