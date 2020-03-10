@@ -253,18 +253,18 @@ console.log(line);
 });
 ```
 
-Write a function to perform a depth first search (DFS) on your graph and output the node values in depth first order
-Write Unit Tests for your DFS function
-Try running your DFS function on a larger adjacency list
-Find, or create, a data set that will result in your exceeding the maximum call stack size, and then, refactor your DFS function to use tail-call recursion which is now possible in JavaScript on account of new language features introduced in the ES6 specification.
+* Write a function to perform a depth first search (DFS) on your graph and output the node values in depth first order
+ * Write Unit Tests for your DFS function
+* Try running your DFS function on a larger adjacency list
+ * Find, or create, a data set that will result in your exceeding the maximum call stack size, and then, refactor your DFS function to use tail-call recursion which is now possible in JavaScript on account of new language features introduced in the ES6 specification.
 * Implement Karger's Algorithm to identify the Minimum Cut for the minimum number of edges in an undirected graph
   * Write Unit Tests for your implementation
   * Start with a small undirected graph (in adjacency list format) of your own making, then give it a go with a larger adjacency list
   * Try really hard to break your implementation so you are forced to improve it
 * Use Kosaraju's Algorithm to identify the greatest strongly connected component (SCC) of a directed graph
-* Write Unit Tests for your implementation
-Start with a small directed graph (in adjacency list format) of your own making, then give it a go with a larger adjacency list
-Try really hard to break your implementation so you are forced to improve it
+ * Write Unit Tests for your implementation
+ * Start with a small directed graph (in adjacency list format) of your own making, then give it a go with a larger adjacency list
+ * Try really hard to break your implementation so you are forced to improve it
 * Build a web crawler (see the Nightmare Mode content from the Recursion Review repo), to crawl the webgraph, and utilize your implementation of Kosaraju's Algorithm to identify clusters of strongly connected web sites. Present your findings in a way that is easy for humans to understand.
   * Make your web crawler robust enough to run overnight, recovering from failures, so that you can return in the morning with massive amounts of meaningful data.
   * As your web crawler runs, store all the information it gathers in redis. You will have to use the node.js redis client in order to do this.
