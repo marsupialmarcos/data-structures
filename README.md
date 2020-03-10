@@ -3,9 +3,9 @@ This is a project I completed as a student at [hackreactor](http://hackreactor.c
 
 # SPRINT ONE: OBJECT-ORIENTED PROGRAMMING
 
-Queue: FIFO - Ex: Queue to the loo. Great for.. sequential operations.
+**Queue**: FIFO - Ex: Queue to the loo. Great for.. sequential operations.
 
-Stack: LIFO - Ex: Stack of pancakes. Great for… implementing your browser’s back button.
+**Stack**: LIFO - Ex: Stack of pancakes. Great for… implementing your browser’s back button.
 
 # Bare Minimum Requirements
 
@@ -25,66 +25,66 @@ Implement both stack and queue data structures in each of the instantiation styl
 
 # Instantiation Styles
 
-Functional instantiation: a simple "maker" pattern.
+1. **Functional instantiation:** a simple "maker" pattern.
 
-Do:
-Work within the src/functional/ folder
-Define all functions and properties within the maker function
-Don't:
-Use the keyword new, the keyword this, or any prototype chains
-Capitalize the maker function name
+*Do:*
+* Work within the src/functional/ folder
+* Define all functions and properties within the maker function
+*Don't:*
+* Use the keyword **new**, the keyword **this**, or any **prototype** chains
+* Capitalize the maker function name
 
-Example: The provided classes Stack and Queue already follow this pattern
+Example: The provided classes *Stack* and *Queue* already follow this pattern
 
-Functional instantiation with shared methods: same as Step 1, but with shared methods
+2. **Functional instantiation with shared methods:** same as Step 1, but with shared methods
 
-Do:
-Work within the src/functional-shared/ folder
-Create an object that holds the methods that will be shared by all instances of the class
-Use the keyword this in your methods
-Use _.extend to copy the methods onto the instance
-Don't:
-Use the keyword new, the keyword this, or any prototype chains
-Capitalize the maker function name
+*Do:*
+* Work within the src/functional-shared/ folder
+* Create an object that holds the methods that will be shared by all instances of the class
+* Use the keyword this in your methods
+* Use _.extend to copy the methods onto the instance
+*Don't:*
+* Use the keyword *new*, the keyword *this*, or any *prototype* chains
+* Capitalize the maker function name
 
 Example: functional instantiation example
 
-Prototypal instantiation: using Object.create
+3. **Prototypal instantiation:** using *Object.create*
 
-Do:
-Work within the src/prototypal/ folder
-Use Object.create with the object from Step 2 to create instances of your class
-Don't:
-Use the keyword new
+*Do:*
+* Work within the src/prototypal/ folder
+* Use Object.create with the object from Step 2 to create instances of your class
+*Don't:*
+* Use the keyword **new**
 
 Example: prototypal instantiation example
 
-Pseudoclassical instantiation: create instances with the keyword new
+4. **Pseudoclassical instantiation:** create instances with the keyword *new*
 
-Do:
-Work within the src/pseudoclassical/ folder
-Capitalize your function name to indicate to others that it is intended to be run with the keyword new
-Use the keyword new when instantiating your class
-Use the keyword this in your constructor
-Don't:
-Declare the instance explicitly
-Return the instance explicitly
+*Do:*
+* Work within the src/pseudoclassical/ folder
+* Capitalize your function name to indicate to others that it is intended to be run with the keyword new
+* Use the keyword new when instantiating your class
+* Use the keyword this in your constructor
+*Don't:*
+* Declare the instance explicitly
+* Return the instance explicitly
 
 Example: pseudoclassical instantiation example
 
-ES6 instantiation: create instances with the keyword new
+5. **ES6 instantiation:** create instances with the keyword new
 
-Do:
-Work within the src/es6/ folder
-Capitalize your function name to indicate to others that it is intended to be run with the keyword new
-Use the keyword new when instantiating your class
-Use the keyword this in your constructor
-Explicity declare a class method named constructor
-Declare all other class methods within the class declaration
-Don't:
-Declare the instance explicitly
-Return the instance explicitly
-Add class methods to the class prototype directly
+*Do:* 
+* Work within the src/es6/ folder
+* Capitalize your function name to indicate to others that it is intended to be run with the keyword new
+* Use the keyword new when instantiating your class
+* Use the keyword this in your constructor
+* Explicity declare a class method named constructor
+* Declare all other class methods within the class declaration
+*Don't:*
+* Declare the instance explicitly
+* Return the instance explicitly
+* Add class methods to the class prototype directly
 
 Example: es6 instantiation example
 
