@@ -31,7 +31,9 @@ a simple "maker" pattern.
 *Do:*
 * Work within the src/functional/ folder
 * Define all functions and properties within the maker function
+
 *Don't:*
+
 * Use the keyword **new**, the keyword **this**, or any **prototype** chains
 * Capitalize the maker function name
 
@@ -45,7 +47,9 @@ same as Step 1, but with shared methods
 * Create an object that holds the methods that will be shared by all instances of the class
 * Use the keyword this in your methods
 * Use _.extend to copy the methods onto the instance
+
 *Don't:*
+
 * Use the keyword *new*, the keyword *this*, or any *prototype* chains
 * Capitalize the maker function name
 
@@ -57,7 +61,9 @@ using *Object.create*
 *Do:*
 * Work within the src/prototypal/ folder
 * Use Object.create with the object from Step 2 to create instances of your class
+
 *Don't:*
+
 * Use the keyword **new**
 
 Example: prototypal instantiation example
@@ -70,7 +76,9 @@ create instances with the keyword *new*
 * Capitalize your function name to indicate to others that it is intended to be run with the keyword new
 * Use the keyword new when instantiating your class
 * Use the keyword this in your constructor
+
 *Don't:*
+
 * Declare the instance explicitly
 * Return the instance explicitly
 
@@ -85,7 +93,9 @@ Example: pseudoclassical instantiation example
 * Use the keyword this in your constructor
 * Explicity declare a class method named constructor
 * Declare all other class methods within the class declaration
+
 *Don't:*
+
 * Declare the instance explicitly
 * Return the instance explicitly
 * Add class methods to the class prototype directly
