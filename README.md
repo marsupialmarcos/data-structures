@@ -232,8 +232,11 @@ Advanced graph work using node.js (see section below)
 For this exercise you will work with adjacency list representations of graphs using node.js, which will allow you to interact with your file system. You'll learn a ton about node later in the course, but this is advanced content so why not get started early. You can find out if node is installed on the computer you're working on by entering which node into the terminal. If node is installed you will see the path to the node binary, otherwise you'll see a blank line. If necessary, install node on the computer you're working on.
 
 Create a basic JavaScript file that logs something to the console
+
 In the terminal, in the directory of the file you just created (for this example let's say it's called test.js) run the command node test.js. You just ran JavaScript with the node interpreter and should see whatever you logged to the console in the terminal
+
 Familiarize yourself with Adjacency Lists and Adjacency Matrices
+
 Whiteboard either a directed or an undirected graph and then translate it into an adjacency list text file
 Write a function to return how many nodes your graph has. In order to accomplish this you will need to use node's fs module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
 
@@ -254,17 +257,17 @@ console.log(line);
 ```
 
 * Write a function to perform a depth first search (DFS) on your graph and output the node values in depth first order
- * Write Unit Tests for your DFS function
+  * Write Unit Tests for your DFS function
 * Try running your DFS function on a larger adjacency list
- * Find, or create, a data set that will result in your exceeding the maximum call stack size, and then, refactor your DFS function to use tail-call recursion which is now possible in JavaScript on account of new language features introduced in the ES6 specification.
+  * Find, or create, a data set that will result in your exceeding the maximum call stack size, and then, refactor your DFS function to use tail-call recursion which is now possible in JavaScript on account of new language features introduced in the ES6 specification.
 * Implement Karger's Algorithm to identify the Minimum Cut for the minimum number of edges in an undirected graph
   * Write Unit Tests for your implementation
   * Start with a small undirected graph (in adjacency list format) of your own making, then give it a go with a larger adjacency list
   * Try really hard to break your implementation so you are forced to improve it
 * Use Kosaraju's Algorithm to identify the greatest strongly connected component (SCC) of a directed graph
- * Write Unit Tests for your implementation
- * Start with a small directed graph (in adjacency list format) of your own making, then give it a go with a larger adjacency list
- * Try really hard to break your implementation so you are forced to improve it
+  * Write Unit Tests for your implementation
+  * Start with a small directed graph (in adjacency list format) of your own making, then give it a go with a larger adjacency list
+  * Try really hard to break your implementation so you are forced to improve it
 * Build a web crawler (see the Nightmare Mode content from the Recursion Review repo), to crawl the webgraph, and utilize your implementation of Kosaraju's Algorithm to identify clusters of strongly connected web sites. Present your findings in a way that is easy for humans to understand.
   * Make your web crawler robust enough to run overnight, recovering from failures, so that you can return in the morning with massive amounts of meaningful data.
   * As your web crawler runs, store all the information it gathers in redis. You will have to use the node.js redis client in order to do this.
