@@ -346,11 +346,11 @@ To prevent this from happening to your collaborators and consumers, indicate pri
 # ADVANCED CONTENT
 Our advanced content is intended to throw you in over your head, requiring you to solve problems with very little support or oversight, much like you would as a mid or senior level engineer.
 
-**Use the Chrome profiling tools to compare the performance of each instantiation pattern.**
+**Use the [Chrome profiling](https://developers.google.com/web/tools/chrome-devtools/rendering-tools/js-execution) tools to compare the performance of each instantiation pattern.**
 
 * Create a new HTML page with your data structures and an additional profiling script. It should instantiate and use a large number of stacks and queues
 * Reload the page with the CPU profiler running to investigate the runtime of your functions
-* Take a heap snapshot to investigate object allocations and memory use
+* Take a [heap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) snapshot to investigate object allocations and memory use
 * Optionally, reload the page with the heap profiler running to investigate garbage collection behavior
 * Do this for each of the instantiation styles, record, and compare the results. Write a brief analysis you could share with a supervisor who needs the information you have in order to make wise decisions about the design of an upcoming project.
 
@@ -358,7 +358,7 @@ Our advanced content is intended to throw you in over your head, requiring you t
 
 **Optional, but highly recommended:** Use TDD.
 
-* Create a doubly-linked-list, with all the methods of your linked list, and add the following properties:
+* Create a [doubly-linked-list](https://en.wikipedia.org/wiki/Doubly_linked_list), with all the methods of your linked list, and add the following properties:
   * An *.addToHead()* method which takes a value and adds it to the front of the list.
   * A *.removeTail()* method which removes the last node from the list and returns its value.
 Note: each *node* object will need to have a new .previous property pointing to the node behind it (or to *null* when appropriate); this is what makes it a doubly-linked list.
@@ -373,7 +373,7 @@ Note: each *node* object will need to have a new .previous property pointing to 
 * Make your set capable of handling input objects of any type
 * Make your binarySearchTree rebalance as soon as the max depth is more than twice the minimum depth
 Implement a *bloomFilter:*
-* Read the Wikipedia article about Bloom Filters and/or BillMill.org's Bloom Filters by Example. tl;dr: It's a probabilistic data structure that efficiently determines whether or not an element is contained in a set. The downside is that is can report false positives. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
+* Read the Wikipedia article about [Bloom Filters](https://en.wikipedia.org/wiki/Bloom_filter) and/or [BillMill.org](https://billmill.org/)'s [Bloom Filters by Example](https://llimllib.github.io/bloomfilter-tutorial/). tl;dr: It's a probabilistic data structure that efficiently determines whether or not an element is contained in a set. The downside is that is can report false positives. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
 * Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
 * Run a small loop that runs 10,000 trials of trying to retrieve a mix of items that are in the filter and not in the filter.
 * Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
@@ -384,14 +384,14 @@ Implement a *bloomFilter:*
 
 **Note:** Please feel free to attempt the following in any order you would like.
 
-* Write a prefixTree that can handle autocomplete for T9-style texting
-* Write a bTree
-* Write a redBlackTree
+* Write a [prefixTree](https://en.wikipedia.org/wiki/Trie) that can handle autocomplete for T9-style texting
+* Write a [bTree](https://en.wikipedia.org/wiki/B-tree)
+* Write a [redBlackTree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
 * Design a data structure that finds every English word that can be made from a given bag of Scrabble letters
 * Optimize the algorithm and the data structure to return the set of words as quickly as possible
 * Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
 * You can assume you have all the time required to do preprocessing on a dictionary of English words
-* Advanced graph work using node.js (see section below)
+* Advanced [graph](https://en.wikipedia.org/wiki/Graph) work using node.js (see section below)
 
 # ADVANCED GRAPHS WITH NODE.JS
 
