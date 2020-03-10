@@ -11,15 +11,15 @@ This is a project I completed as a student at [hackreactor](http://hackreactor.c
 
 Implement a stack with the following methods:
 
-* push(string) - Add a string to the top of the stack
-* pop() - Remove and return the string on the top of the stack
-* size() - Return the number of items on the stack
+* *push(string)* - Add a string to the top of the stack
+* *pop()* - Remove and return the string on the top of the stack
+* *size()* - Return the number of items on the stack
 
 Implement a queue with the following methods:
 
-* enqueue(string) - Add a string to the back of the queue
-* dequeue() - Remove and return the string at the front of the queue
-* size() - Return the number of items in the queue
+* *enqueue(string)* - Add a string to the back of the queue
+* *dequeue()* - Remove and return the string at the front of the queue
+* *size()* - Return the number of items in the queue
 
 Implement both stack and queue data structures in each of the instantiation styles. The functional style is stubbed out in src/functional/queue.js and src/functional/stack.js to get you started.
 
@@ -45,15 +45,15 @@ same as Step 1, but with shared methods
 *Do:*
 * Work within the src/functional-shared/ folder
 * Create an object that holds the methods that will be shared by all instances of the class
-* Use the keyword this in your methods
+* Use the keyword **this** in your methods
 * Use _.extend to copy the methods onto the instance
 
 *Don't:*
 
-* Use the keyword *new*, the keyword *this*, or any *prototype* chains
+* Use the keyword **new**, the keyword **this**, or any **prototype** chains
 * Capitalize the maker function name
 
-Example: functional instantiation example
+Example:
 
 ```javascript
 //extending properties saves you from having to add each one individually.
@@ -124,7 +124,7 @@ using *Object.create*
 
 * Use the keyword **new**
 
-Example: prototypal instantiation example
+Example:
 ```javascript  
 //prototypal inheritence
 
@@ -190,7 +190,54 @@ create instances with the keyword *new*
 * Declare the instance explicitly
 * Return the instance explicitly
 
-Example: pseudoclassical instantiation example
+Example:
+```javascript
+//pseudo-classical inheritance example
+
+var Giraffe = function(name, height) {
+  this.name = name;
+  this.height = height;
+  this.hunger = 10;
+};
+
+Giraffe.prototype.isTallEnough = function(treeHeight) {
+    return this.height > treeHeight;
+  };
+
+Giraffe.prototype.isHungry = function() {
+  return this.hunger > 0;
+};
+
+Giraffe.prototype.say = function(option) {
+  var sentences = {
+    'greet': 'Hello, my name is ' + this.name + ', it is nice to meet you.',
+    'notHungry': this.name + ' is not hungry.',
+    'notTallEnough': this.name + ' is too short to reach the trees.',
+    'ate': 'That was delicious!'
+  };
+
+  return console.log(sentences[option]);
+};
+
+Giraffe.prototype.eat = function() {
+  if (this.isHungry()) {
+    this.hunger -= this.height;
+    this.say('ate');
+  } else {
+    this.say('notHungry');
+  }
+};
+
+Giraffe.prototype.browse = function() {
+  if (this.isTallEnough(2)) {
+    this.eat();
+  } else {
+    this.say('notTallEnough')
+  }
+};
+
+var Stanley = new Giraffe('stanley', 5);
+```
 
 ## 5. **ES6 instantiation:** create instances with the keyword new
 
@@ -208,8 +255,56 @@ Example: pseudoclassical instantiation example
 * Return the instance explicitly
 * Add class methods to the class prototype directly
 
-Example: es6 instantiation example
+Example:  
+```javascript
+//ES6 class declaration example
 
+class Giraffe {
+  constructor(name, height) {
+    this.name = name;
+    this.height = height;
+    this.hunger = 10;
+  }
+
+  isTallEnough(treeHeight) {
+    return this.height > treeHeight;
+  }
+
+  isHungry() {
+    return this.hunger > 0;
+  }
+
+  say(option) {
+    var sentences = {
+      'greet': 'Hello, my name is ' + this.name + ', it is nice to meet you.',
+      'notHungry': this.name + ' is not hungry.',
+      'notTallEnough': this.name + ' is too short to reach the trees.',
+      'ate': 'That was delicious!'
+    };
+
+    return console.log(sentences[option]);
+  }
+
+  eat() {
+    if (this.isHungry()) {
+      this.hunger -= this.height;
+      this.say('ate');
+    } else {
+      this.say('notHungry');
+    }
+  }
+
+  browse() {
+    if (this.isTallEnough(2)) {
+      this.eat();
+    } else {
+      this.say('notTallEnough')
+    }
+  }
+}
+
+var Stanley = new Giraffe('stanley', 5);
+```
 ___
 
 # SPRINT TWO: DATA STRUCTURES
