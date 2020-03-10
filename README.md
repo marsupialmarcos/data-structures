@@ -204,55 +204,52 @@ Do this for each of the instantiation styles, record, and compare the results. W
 
 Note: The following prompts have varying levels of difficulty and you may not wish to complete all of them in entirety. In order to decide how to allocate your time, please read the descriptions of all of them before starting.
 
-Optional, but highly recommended: Use TDD.
+**Optional, but highly recommended:** Use TDD.
 
-Create a doubly-linked-list, with all the methods of your linked list, and add the following properties:
-An .addToHead() method which takes a value and adds it to the front of the list.
-A .removeTail() method which removes the last node from the list and returns its value.
+* Create a doubly-linked-list, with all the methods of your linked list, and add the following properties:
+  * An .addToHead() method which takes a value and adds it to the front of the list.
+  * A .removeTail() method which removes the last node from the list and returns its value.
 Note: each node object will need to have a new .previous property pointing to the node behind it (or to null when appropriate); this is what makes it a doubly-linked list.
-Add parent links to your tree
-A .parent property, which refers to the parent node or null when there is no node
-A .removeFromParent() method, which disassociates the tree with its parent (in both directions)
-To prevent excessive collisions, make your hashTable double in size as soon as 75 percent of the spaces have been filled
-To save space, make sure the hashTable halves in size when space usage falls below 25 percent
-Implement a .traverse() method on your tree. Your .traverse() should accept a callback and execute it on every value contained in the tree
+* Add parent links to your tree
+  * A .parent property, which refers to the parent node or null when there is no node
+  * A .removeFromParent() method, which disassociates the tree with its parent (in both directions)
+  * To prevent excessive collisions, make your hashTable double in size as soon as 75 percent of the spaces have been filled
+* To save space, make sure the hashTable halves in size when space usage falls below 25 percent
+* Implement a .traverse() method on your tree. Your .traverse() should accept a callback and execute it on every value contained in the tree
 .breadthFirstLog() method for binarySearchTee, logs the nodes contained in the tree using a breadth-first approach
-Make your set capable of handling numbers as well as strings
-Make your set capable of handling input objects of any type
-Make your binarySearchTree rebalance as soon as the max depth is more than twice the minimum depth
+* Make your set capable of handling numbers as well as strings
+* Make your set capable of handling input objects of any type
+* Make your binarySearchTree rebalance as soon as the max depth is more than twice the minimum depth
 Implement a bloomFilter:
-Read the Wikipedia article about Bloom Filters and/or BillMill.org's Bloom Filters by Example. tl;dr: It's a probabilistic data structure that efficiently determines whether or not an element is contained in a set. The downside is that is can report false positives. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
-Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
-Run a small loop that runs 10,000 trials of trying to retrieve a mix of items that are in the filter and not in the filter.
-Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
-Compare that rate with the approximation given for Bloom filters, which is approximated as (1- e^(-kn/m))^k
+* Read the Wikipedia article about Bloom Filters and/or BillMill.org's Bloom Filters by Example. tl;dr: It's a probabilistic data structure that efficiently determines whether or not an element is contained in a set. The downside is that is can report false positives. Use cases are often for checking against a giant list locally and only doing a full lookup when the local one comes back positive.
+* Create an "m=18, k=3" bloom filter. This means 18 slots, with 3 hash functions.
+* Run a small loop that runs 10,000 trials of trying to retrieve a mix of items that are in the filter and not in the filter.
+* Record the empirical rate of false-positives by comparing your result with what you know to be true from the inputs you selected.
+* Compare that rate with the approximation given for Bloom filters, which is approximated as (1- e^(-kn/m))^k
 
 
 # NIGHTMARE MODE:
 
 Note: Please feel free to attempt the following in any order you would like.
 
-Write a prefixTree that can handle autocomplete for T9-style texting
-Write a bTree
-Write a redBlackTree
-Design a data structure that finds every English word that can be made from a given bag of Scrabble letters
-Optimize the algorithm and the data structure to return the set of words as quickly as possible
-Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
-You can assume you have all the time required to do preprocessing on a dictionary of English words
-Advanced graph work using node.js (see section below)
+* Write a prefixTree that can handle autocomplete for T9-style texting
+* Write a bTree
+* Write a redBlackTree
+* Design a data structure that finds every English word that can be made from a given bag of Scrabble letters
+* Optimize the algorithm and the data structure to return the set of words as quickly as possible
+* Your priority for this task is to optimize for time complexity, but do try to avoid wasted space in your solution
+* You can assume you have all the time required to do preprocessing on a dictionary of English words
+* Advanced graph work using node.js (see section below)
 
 # ADVANCED GRAPHS WITH NODE.JS
 
 For this exercise you will work with adjacency list representations of graphs using node.js, which will allow you to interact with your file system. You'll learn a ton about node later in the course, but this is advanced content so why not get started early. You can find out if node is installed on the computer you're working on by entering which node into the terminal. If node is installed you will see the path to the node binary, otherwise you'll see a blank line. If necessary, install node on the computer you're working on.
 
-Create a basic JavaScript file that logs something to the console
-
-In the terminal, in the directory of the file you just created (for this example let's say it's called test.js) run the command node test.js. You just ran JavaScript with the node interpreter and should see whatever you logged to the console in the terminal
-
-Familiarize yourself with Adjacency Lists and Adjacency Matrices
-
-Whiteboard either a directed or an undirected graph and then translate it into an adjacency list text file
-Write a function to return how many nodes your graph has. In order to accomplish this you will need to use node's fs module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
+* Create a basic JavaScript file that logs something to the console
+* In the terminal, in the directory of the file you just created (for this example let's say it's called test.js) run the command node test.js. You just ran JavaScript with the node interpreter and should see whatever you logged to the console in the terminal
+* Familiarize yourself with Adjacency Lists and Adjacency Matrices
+* Whiteboard either a directed or an undirected graph and then translate it into an adjacency list text file
+* Write a function to return how many nodes your graph has. In order to accomplish this you will need to use node's fs module to read your adjacency list text file and split it into lines. You'll learn how to do this later in the course, but for now, feel free to use the following code:
 
 ```javascript
 // this line lets you access the file system. You'll learn more about it later in the course
