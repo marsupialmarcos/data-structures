@@ -26,7 +26,7 @@ Implement both stack and queue data structures in each of the instantiation styl
 # Instantiation Styles
 
 ### 1. Functional instantiation:
-a simple "maker" pattern.
+A simple "maker" pattern.
 
 *Do:*
 * Work within the src/functional/ folder
@@ -39,8 +39,32 @@ a simple "maker" pattern.
 
 Example: The provided classes *Stack* and *Queue* already follow this pattern
 
+```javascript
+var giraffeMaker = function(name, height) {
+  var newGiraffe = {};
+  newGiraffe.name = name;
+  newGiraffe.height = height;
+  newGiraffe.hunger = 10;
+
+  newGiraffe.isTallEnough = function(treeHeight) {
+    return newGiraffe.height > treeHeight;
+  };
+
+  newGiraffe.isHungry = function() {
+    return newGiraffe.hunger > 0;
+  };
+
+  newGiraffe.say = function(option) {
+    var sentences = {
+      'greet': 'Hello, my name is ' + newGiraffe.name + ', it is nice to meet you.',
+      'notHungry': newGiraffe.name + ' is not hungry.',
+      'notTallEnough': newGiraffe.name + ' is too short to reach the trees.',
+      'ate': 'That was delicious!'
+    };
+```
+
 ### 2. Functional instantiation with shared methods:
-same as functional instantiation, but with shared methods
+Same as functional instantiation, but with shared methods.
 
 *Do:*
 * Work within the src/functional-shared/ folder
@@ -86,7 +110,7 @@ giraffeMaker.giraffeMethods.isHungry = function() {
 };
 ```
 ### 3. Prototypal instantiation:
-Using *Object.create(Prototype Delegate)*
+Using *Object.create(Prototype)*
 
 *Do:*
 * Work within the src/prototypal/ folder
