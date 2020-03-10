@@ -252,9 +252,9 @@ A linkedList class, in functional style, with the following properties:
 
 * .head property, a linkedListNode instance
 * .tail property, a linkedListNode instance
-* .addToTail() method, takes a value and adds it to the end of the list
-* .removeHead() method, removes the first node from the list and returns its value
-* .contains() method, returns boolean reflecting whether or not the passed-in value is in the linked list
+* *.addToTail()* method, takes a value and adds it to the end of the list
+* *.removeHead()* method, removes the first node from the list and returns its value
+* *.contains()* method, returns boolean reflecting whether or not the passed-in value is in the linked list
 
 What is the time complexity of the above functions?
 
@@ -264,8 +264,8 @@ A tree is a hierarchical data structure consisting of a node (potentially) with 
 
 * A tree class, in functional with shared methods style, with the following properties:
 * .children property, an array containing a number of subtrees
-* .addChild() method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
-* A .contains() method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
+* *.addChild()* method, takes any value, sets that as the target of a node, and adds that node as a child of the tree
+* A *.contains()* method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
 * What is the time complexity of the above functions?
 
 ## Graph
@@ -278,41 +278,39 @@ Sets contain unique values in no particular order. A set would be great for.... 
 
 A set class, in prototypal style, with the following properties:
 
-* An .add() method, takes any string and adds it to the set
+* An *.add()* method, takes any string and adds it to the set
 * A .contains() method, takes any string and returns a boolean reflecting whether it can be found in the set
-* A .remove() method, takes any string and removes it from the set, if present
-What is the time complexity of the above functions?
+* A *.remove()* method, takes any string and removes it from the set, if present
+* What is the time complexity of the above functions?
 
-Note: Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
+**Note:** Sets should not use up any more space than necessary. Once a value is added to a set, adding it a second time should not increase the size of the set.
 
-Note: Until the advanced section, your sets should handle only string values.
+**Note:** Until the advanced section, your sets should handle only string values.
 
-Note: This is a rather simple data structure. Take a look at the Wikipedia entry. Which native Javascript type fits the requirements best?
+**Note:** This is a rather simple data structure. Take a look at the Wikipedia entry. Which native Javascript type fits the requirements best?
 
 ## Hash Table
 
 Hash tables (sometimes called hash maps) store key value pairs. They do so in a memory efficient way by using a 'hashing function' that translates keys into numerical indices located within a fixed block of memory (think about the contiguous blocks of memory used in arrays). Hash tables only increase their size in memory when necessary, and reduce their size in memory when possible. A hash table would be great for.... A contact list you might add to or remove from over time.
 
-A hashTable class, in pseudoclassical style:
+* A hashTable class, in pseudoclassical style:
 
-First: Play with each of the helper functions provided to get a sense of what they do.
-You will use the provided hash function to convert any key into an array index. Try interacting with it from the console first.
+  * First: Play with each of the helper functions provided to get a sense of what they do.
+  * You will use the provided hash function to convert any key into an array index. Try interacting with it from the console first.
+  * A limitedArray helper has been provided for you, check out the source code for it in src/hashTableHelpers.js. Use it to store all inserted values rather than using a plain JavaScript array. The limitedArray, as you will see in the source code, provides get, set, and each methods which you should use in order to interact with it. Do not use the typical bracket notation for arrays when interacting with a limitedArray instance. Try interacting with it from the console first.
+* Make the following properties appear on all instances:
 
-A limitedArray helper has been provided for you, check out the source code for it in src/hashTableHelpers.js. Use it to store all inserted values rather than using a plain JavaScript array. The limitedArray, as you will see in the source code, provides get, set, and each methods which you should use in order to interact with it. Do not use the typical bracket notation for arrays when interacting with a limitedArray instance. Try interacting with it from the console first.
-
-Make the following properties appear on all instances:
-
-* An .insert() method
-* A .retrieve() method
-* A .remove() method
+  * An .insert() method
+  * A .retrieve() method
+  * A .remove() method
 
 What is the time complexity of the above functions?
 
 Using your understanding of hash tables, refactor your set implementation from above to run in constant time
 
-On Objects and Hash Tables: An astute hacker might find themselves wondering "Is it not so that a JavaScript object is a hash table?" or even further, "Why would I ever need to create a hash table in JavaScript?" While it is true that objects and hash tables are functionally similar, knowing how a hash table works is hugely important as they are an incredibly useful and fundamental data structure. To have detailed knowledge of how a hash table is constructed will give you valuable insight on your path to code mastery. Additionally, other languages might not provide the convenience of JavaScript's object class, meaning you may someday have to put your hash table construction abilities to good use.
+**On Objects and Hash Tables:** An astute hacker might find themselves wondering "Is it not so that a JavaScript object is a hash table?" or even further, "Why would I ever need to create a hash table in JavaScript?" While it is true that objects and hash tables are functionally similar, knowing how a hash table works is hugely important as they are an incredibly useful and fundamental data structure. To have detailed knowledge of how a hash table is constructed will give you valuable insight on your path to code mastery. Additionally, other languages might not provide the convenience of JavaScript's object class, meaning you may someday have to put your hash table construction abilities to good use.
 
-**Interesting Aside: JavaScript objects aren't necessarily backed by hash tables. Despite the similarities, the ECMA-262 standard makes no restrictions on how JavaScript objects are implemented. The V8 JavaScript engine, which is used in Chrome, implements objects in a way that is significantly faster than using a hash table.
+> Interesting Aside: JavaScript objects aren't necessarily backed by hash tables. Despite the similarities, the ECMA-262 standard makes no restrictions on how JavaScript objects are implemented. The V8 JavaScript engine, which is used in Chrome, implements objects in a way that is significantly faster than using a hash table.
 
 
 ## Binary Search Tree
@@ -322,9 +320,9 @@ Binary trees are trees that can only have 0, 1, or 2 children. Remember that tre
 Implement a binarySearchTree class with the following properties:
 * A .left property, a binary search tree (BST) where all values are lower than the current value.
 * A .right property, a BST where all values are higher than the current value.
-* A .insert() method, which accepts a value and places it in the tree in the correct * position.
-* A .contains() method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
-* A .depthFirstLog() method, which accepts a callback and executes it on every value contained in the tree.
+* A *.insert()* method, which accepts a value and places it in the tree in the correct * position.
+* A *.contains()* method, which accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
+* A *.depthFirstLog()* method, which accepts a callback and executes it on every value contained in the tree.
 What is the time complexity of the above functions?
 
 Use case: Given a list of a million numbers, write a function that takes a new number and returns the closest number in the list using your BST. Profile this against the same operation using an array.
