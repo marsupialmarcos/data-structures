@@ -25,7 +25,8 @@ Implement both stack and queue data structures in each of the instantiation styl
 
 # Instantiation Styles
 
-## 1. **Functional instantiation:** a simple "maker" pattern.
+## 1. Functional instantiation:
+a simple "maker" pattern.
 
 *Do:*
 * Work within the src/functional/ folder
@@ -36,7 +37,8 @@ Implement both stack and queue data structures in each of the instantiation styl
 
 Example: The provided classes *Stack* and *Queue* already follow this pattern
 
-## 2. **Functional instantiation with shared methods:** same as Step 1, but with shared methods
+## 2. Functional instantiation with shared methods:
+same as Step 1, but with shared methods
 
 *Do:*
 * Work within the src/functional-shared/ folder
@@ -49,7 +51,8 @@ Example: The provided classes *Stack* and *Queue* already follow this pattern
 
 Example: functional instantiation example
 
-## 3. **Prototypal instantiation:** using *Object.create*
+## 3. Prototypal instantiation:
+using *Object.create*
 
 *Do:*
 * Work within the src/prototypal/ folder
@@ -59,7 +62,8 @@ Example: functional instantiation example
 
 Example: prototypal instantiation example
 
-## 4. **Pseudoclassical instantiation:** create instances with the keyword *new*
+## 4. **Pseudoclassical instantiation:** 
+create instances with the keyword *new*
 
 *Do:*
 * Work within the src/pseudoclassical/ folder
