@@ -25,7 +25,7 @@ Implement both stack and queue data structures in each of the instantiation styl
 
 # Instantiation Styles
 
-## 1. Functional instantiation:
+### 1. Functional instantiation:
 a simple "maker" pattern.
 
 *Do:*
@@ -39,8 +39,8 @@ a simple "maker" pattern.
 
 Example: The provided classes *Stack* and *Queue* already follow this pattern
 
-## 2. Functional instantiation with shared methods:
-same as Step 1, but with shared methods
+### 2. Functional instantiation with shared methods:
+same as functional instantiation, but with shared methods
 
 *Do:*
 * Work within the src/functional-shared/ folder
@@ -84,37 +84,9 @@ giraffeMaker.giraffeMethods.isTallEnough = function(treeHeight) {
 giraffeMaker.giraffeMethods.isHungry = function() {
   return this.hunger > 0;
 };
-
-giraffeMaker.giraffeMethods.say = function(option) {
-  var sentences = {
-    'greet': 'Hello, my name is ' + this.name + ', it is nice to meet you.',
-    'notHungry': this.name + ' is not hungry.',
-    'notTallEnough': this.name + ' is too short to reach the trees.',
-    'ate': 'That was delicious!'
-  };
-
-  return console.log(sentences[option]);
-};
-
-giraffeMaker.giraffeMethods.eat = function() {
-  if (this.isHungry()) {
-    this.hunger -= this.height;
-    this.say('ate');
-  } else {
-    this.say('notHungry');
-  }
-};
-
-giraffeMaker.giraffeMethods.browse = function() {
-  if (this.isTallEnough(2)) {
-    this.eat();
-  } else {
-    this.say('notTallEnough')
-  }
-};
 ```
-## 3. Prototypal instantiation:
-using *Object.create*
+### 3. Prototypal instantiation:
+Using *Object.create(Prototype Delegate)*
 
 *Do:*
 * Work within the src/prototypal/ folder
@@ -146,38 +118,10 @@ giraffeMaker.stuff.isTallEnough = function(treeHeight) {
 giraffeMaker.stuff.isHungry = function() {
   return this.hunger > 0;
 };
-
-giraffeMaker.stuff.say = function(option) {
-  var sentences = {
-    'greet': 'Hello, my name is ' + this.name + ', it is nice to meet you.',
-    'notHungry': this.name + ' is not hungry.',
-    'notTallEnough': this.name + ' is too short to reach the trees.',
-    'ate': 'That was delicious!'
-  };
-
-  return console.log(sentences[option]);
-};
-
-giraffeMaker.stuff.eat = function() {
-  if (this.isHungry()) {
-    this.hunger -= this.height;
-    this.say('ate');
-  } else {
-    this.say('notHungry');
-  }
-};
-
-giraffeMaker.stuff.browse = function() {
-  if (this.isTallEnough(2)) {
-    this.eat();
-  } else {
-    this.say('notTallEnough')
-  }
-};
 ```
 
-## 4. **Pseudoclassical instantiation:** 
-create instances with the keyword *new*
+### 4. **Pseudoclassical instantiation:** 
+Create instances with the keyword *new*
 
 *Do:*
 * Work within the src/pseudoclassical/ folder
@@ -219,35 +163,20 @@ Giraffe.prototype.say = function(option) {
   return console.log(sentences[option]);
 };
 
-Giraffe.prototype.eat = function() {
-  if (this.isHungry()) {
-    this.hunger -= this.height;
-    this.say('ate');
-  } else {
-    this.say('notHungry');
-  }
-};
-
-Giraffe.prototype.browse = function() {
-  if (this.isTallEnough(2)) {
-    this.eat();
-  } else {
-    this.say('notTallEnough')
-  }
-};
-
 var Stanley = new Giraffe('stanley', 5);
 ```
 
-## 5. **ES6 instantiation:** create instances with the keyword new
+### 5. ES6 instantiation:
+Create instances with the keyword **new**
+Create classes with the **class** declaration
 
 *Do:* 
 * Work within the src/es6/ folder
-* Capitalize your function name to indicate to others that it is intended to be run with the keyword new
-* Use the keyword new when instantiating your class
-* Use the keyword this in your constructor
+* Capitalize your function name to indicate that it is intended to be run with the keyword new
+* Use the keyword **new** when instantiating your class
+* Use the keyword **this** in your constructor
 * Explicity declare a class method named constructor
-* Declare all other class methods within the class declaration
+* Declare all other class methods within the **class** declaration
 
 *Don't:*
 
@@ -284,24 +213,6 @@ class Giraffe {
 
     return console.log(sentences[option]);
   }
-
-  eat() {
-    if (this.isHungry()) {
-      this.hunger -= this.height;
-      this.say('ate');
-    } else {
-      this.say('notHungry');
-    }
-  }
-
-  browse() {
-    if (this.isTallEnough(2)) {
-      this.eat();
-    } else {
-      this.say('notTallEnough')
-    }
-  }
-}
 
 var Stanley = new Giraffe('stanley', 5);
 ```
